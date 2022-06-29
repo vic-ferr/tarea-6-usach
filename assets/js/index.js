@@ -1,4 +1,3 @@
-console.log("Hello pokemon");
 const cards = document.getElementById("cards");
 
 const getPokemones = async (numeroPokemon) => {
@@ -7,7 +6,6 @@ const getPokemones = async (numeroPokemon) => {
       `https://pokeapi.co/api/v2/pokemon/${numeroPokemon}`
     );
     const dato = response.data;
-    console.log(dato);
 
     cards.innerHTML += `<div class="card text-center mt-5 mb-4" style="width: 30rem;">
   <img src="${dato.sprites.other.dream_world.front_default}" class="card-img-top" alt="${dato.name}">
@@ -27,8 +25,8 @@ const showPokemons = (async () => {
 })();
 
 /*
-let pokemonsList = document.getElementById("cards");
-let links = document.getElementById("links");
+const cards = document.getElementById("cards");
+
 
 // Llamamos a la API de pokemon con Fetch
 fetch("https://pokeapi.co/api/v2/pokemon?limit=10&offset=0")
